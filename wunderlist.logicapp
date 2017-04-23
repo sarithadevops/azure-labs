@@ -1,0 +1,104 @@
+{
+    "$connections": {
+        "value": {
+            "gmail": {
+                "connectionId": "/subscriptions/0eefb17d-0bea-beca-421e86602391/resourceGroups/wunderlist/providers/Microsoft.Web/connections/gmail-1",
+                "connectionName": "gmail-1",
+                "id": "/subscriptions/0eefb17d-0bea-421e86602391/providers/Microsoft.Web/locations/southeastasia/managedApis/gmail"
+            },
+            "googlecalendar": {
+                "connectionId": "/subscriptions/0eefb17d-4532-beca-421e86602391/resourceGroups/wunderlist/providers/Microsoft.Web/connections/googlecalendar",
+                "connectionName": "googlecalendar",
+                "id": "/subscriptions/0eefb17d-0bea-4532-421e86602391/providers/Microsoft.Web/locations/southeastasia/managedApis/googlecalendar"
+            },
+            "wunderlist": {
+                "connectionId": "/subscriptions/0eefb17d-4532-beca-421e86602391/resourceGroups/wunderlist/providers/Microsoft.Web/connections/wunderlist",
+                "connectionName": "wunderlist",
+                "id": "/subscriptions/0eefb17d-0bea-4532/providers/Microsoft.Web/locations/southeastasia/managedApis/wunderlist"
+            }
+        }
+    },
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Create_an_event": {
+                "inputs": {
+                    "body": {
+                        "end": "@{triggerBody()?['due_date']}T12:00:00.202Z",
+                        "start": "@{triggerBody()?['due_date']}T11:00:00.202Z",
+                        "summary": "@{triggerBody()?['title']}"
+                    },
+                    "host": {
+                        "api": {
+                            "runtimeUrl": "https://logic-apis-southeastasia.azure-apim.net/apim/googlecalendar"
+                        },
+                        "connection": {
+                            "name": "@parameters('$connections')['googlecalendar']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/calendars/@{encodeURIComponent('demouser@gmail.com')}/events"
+                },
+                "runAfter": {
+                    "Send_email": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ApiConnection"
+            },
+            "Send_email": {
+                "inputs": {
+                    "body": {
+                        "Subject": "Task @{triggerBody()?['title']} was created at @{triggerBody()?['created_at']} by @{triggerBody()?['created_by_id']}",
+                        "To": "demouser@gmail.com"
+                    },
+                    "host": {
+                        "api": {
+                            "runtimeUrl": "https://logic-apis-southeastasia.azure-apim.net/apim/gmail"
+                        },
+                        "connection": {
+                            "name": "@parameters('$connections')['gmail']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/Mail"
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "When_a_new_task_is_created": {
+                "inputs": {
+                    "host": {
+                        "api": {
+                            "runtimeUrl": "https://logic-apis-southeastasia.azure-apim.net/apim/wunderlist"
+                        },
+                        "connection": {
+                            "name": "@parameters('$connections')['wunderlist']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/trigger/tasksnew",
+                    "queries": {
+                        "list_id": 299906551
+                    }
+                },
+                "recurrence": {
+                    "frequency": "Second",
+                    "interval": 10
+                },
+                "splitOn": "@triggerBody()",
+                "type": "ApiConnection"
+            }
+        }
+    }
+}
