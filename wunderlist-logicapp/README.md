@@ -97,7 +97,7 @@ Examine the Run Details of the flow to see what actions were performed and the r
 
 **Congratulations, you've completed the exercise!**
 
-## Clean up
+## 4. Clean up
 
 In the main flow window, disable the flow so it doesn't consume your resources. You might also choose to delete it.
 
