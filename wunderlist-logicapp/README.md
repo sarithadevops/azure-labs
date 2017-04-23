@@ -13,7 +13,7 @@ This lab gives you a hands-on experience for [Azure Logic Apps](``). You'll be a
 
 ## 1 - Create Accounts
 
-Make sure you can access the Azure portal at [http://portal.azure.com](http://portal.azure.com), then create a GMail account (if you don't want to use your personal one.
+Make sure you can access the Azure portal at [http://portal.azure.com](http://portal.azure.com), then create a Gmail account if you don't have one or prefer not to use your personal one.
 
 Head over to [Wunderlist](http://www.wunderlist.com) and create a free account, they also offer a mobile app for IOS and Android to make task management easy!
 
