@@ -103,9 +103,9 @@ In the main flow window, disable the flow so it doesn't consume your resources. 
 
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-18.png)
 
-### Authors
+### Authors & History
 
-* **Uli Hitzel** - *Initial work* - [u1i](https://github.com/u1i)
+* **Uli Hitzel** - *First Cut, April 2017* - [u1i](https://github.com/u1i)
 
 ### License
 
