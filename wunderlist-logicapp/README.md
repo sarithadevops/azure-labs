@@ -77,21 +77,32 @@ Save the flow, now let's go test it.
 
 ## Test your flow
 
+Go to the main page of your `wunderlist` logic app, you should see that the flow is checking every 10 seconds if there's something to do. We have not created a task yet, so the run history should only show `skipped` runs.
+
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-14.png)
 
-![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-19.png)
+Open a new tab and go to the `inbox` of [Wunderlist](wunderlist.com/#/lists/inbox), type something into the field but **do not press ENTER yet**. Click on the calendar symbol and choose a due date, probably a day next week. Click inside the task field and hit ENTER, the task will now be saved.
 
-![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-20.png)
+![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-19.png?wunderlist)
 
-
-![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-15.png)
-
-![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-16.png)
+Shortly after that you should find a new email in the [Gmail](http://www.gmail.com) inbox and a [calendar](http://calendar.google.com) entry that looks like the following:
 
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-17.png)
 
+Go to the main page of your `wunderlist` logic app, look at the run history, you should see a successful run:
+
+![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-15.png)
+
+Examine the Run Details of the flow to see what actions were performed and the responses from the respective services.
+
+![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-16.png)
+
+**Congratulations, you've completed the exercise!**
+
+## Clean up
+
+In the main flow window, disable the flow so it doesn't consume your resources. You might also choose to delete it.
+
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-18.png)
-
-
 
 
