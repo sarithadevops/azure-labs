@@ -73,7 +73,7 @@ Save the flow, now let's go test it.
 
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-13.png)
 
-## Test your flow
+## 3. Test your flow
 
 Go to the main page of your `wunderlist` logic app, you should see that the flow is checking every 10 seconds if there's something to do. We have not created a task yet, so the run history should only show `skipped` runs.
 
