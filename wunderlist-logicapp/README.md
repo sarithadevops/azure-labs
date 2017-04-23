@@ -2,9 +2,9 @@
 
 ## Objective & Audience
 
-Add a task in Wunderlist, and have the due date blocked in your calendar and an email sent to you.
+This lab gives you a hands-on experience for [Azure Logic Apps](``), you do not have to be a software developer to carry out the exercise.
 
-This lab gives you a hands-on experience how Azure Logic Apps work, you do not have to be a software developer to carry out the exercise.
+You'll be adding a task in Wunderlist, and your logic app will put a reminder in your calendar at the due date and will send you the details via email as well.
 
 ## What you need
 
