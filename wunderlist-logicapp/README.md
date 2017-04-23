@@ -79,6 +79,11 @@ Save the flow, now let's go test it.
 
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-14.png)
 
+![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-19.png)
+
+![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-20.png)
+
+
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-15.png)
 
 ![](https://raw.githubusercontent.com/u1i/azure-labs/master/wunderlist-logicapp/img/wl-lab-16.png)
